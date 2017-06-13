@@ -1,0 +1,19 @@
+#main-headers{
+	text-align: center;
+}
+
+
+#postDiv{
+	text-align: center;
+	margin: 0 auto;
+}
+
+.mdl-card__actions mdl-card--border{
+	margin: 0 auto;
+	text-align: center;
+}
+
+form{
+		margin: 0 auto;
+	text-align: center;
+}

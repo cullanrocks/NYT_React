@@ -49,16 +49,9 @@ handleInputChange(event) {
 
   handleButtonClick(event) {
     event.preventDefault();
-    API.getArticle(this.state.searchQuery, this.state.startYear, this.state.endYear).then(function(data){ 
-        let resultsArray = [];
-            API.saveArticles(data).then((articles) => {
-                console.log(articles)
-            
-                // resultsArray.push(articles);
-                this.setState({results: articles}).bind(this);
-                // console.log(this.state.articles)
-            })
-        })
+    API.saveArticles(this.state.searchQuery, this.state.startYear, this.state.endYear).then((data)=>{
+      console.log(data)
+    });
     }
   
   render() {

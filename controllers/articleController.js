@@ -13,7 +13,7 @@ module.exports = {
 
     Article.find(query)
       .then(function(doc) {
-        console.log(doc)
+        // console.log(doc)
         res.json(doc);
       }).catch(function(err) {
         res.json(err);
@@ -23,15 +23,16 @@ module.exports = {
 
   // This method handles creating new Articles
   create: function(req, res) {
-    // console.log("hello")
-    console.log(req.body)
-
-    Article.create(req.body).then(function(doc) {
+    let response = req.body.NYTdata.data.response.docs;
+    // console.log(response)
+    for (var i = 0; i < response.length; i++){
+    Article.create({article: response[i].lead_paragraph, url: response[i].web_url, date: response[i].pub_date}).then((doc)=> {
       console.log(doc)
       res.json(doc);
     }).catch(function(err) {
-      // res.json(err);
+      res.json(err);
     });
+  }
   },
 
   // This method handles updating Articles

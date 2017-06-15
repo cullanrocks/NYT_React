@@ -54,8 +54,7 @@ class Main extends Component {
                     </div>
                     <div className="mdl-cell mdl-cell--2-col mdl-cell--1-col-tablet mdl-cell--1-phone">
                     </div>
-
-                {/*<Results/> Place Holder*/}
+                {/* /* <Results results={this.state.results} saveArticle={this.saveArticle}/>  Place Holder*/}
                 </div>
             </div>
         </main>

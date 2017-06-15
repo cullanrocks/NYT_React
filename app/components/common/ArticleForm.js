@@ -87,15 +87,4 @@ handleInputChange(event) {
   }
 }
 
-const styles = {
-  buttonStyle: {
-    float: "right",
-    marginTop: 10
-  },
-  formStyle: {
-    marginBottom: 60,
-    marginTop: 60
-  }
-};
-
 export default ArticleForm;

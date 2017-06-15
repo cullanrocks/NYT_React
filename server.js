@@ -23,6 +23,10 @@ app.use(logger("dev"));
 const Article = require("./models/articleModel.js");
 // -------------------------------------------------
 
+// Article.create([{ article: 'TestHeadline1', url: "www.123.com", date: "1" }, { article: 'TestHeadline2', url: "www.234.com", date: "2" }], function(err, res){
+//                 err ? console.log(err) : console.log(res)
+//             });
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

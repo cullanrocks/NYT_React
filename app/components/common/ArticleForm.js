@@ -51,6 +51,7 @@ handleInputChange(event) {
     event.preventDefault();
     API.saveArticles(this.state.searchQuery, this.state.startYear, this.state.endYear).then((data)=>{
       console.log(data)
+      this.setState({results: data})
     });
     }
   

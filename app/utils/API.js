@@ -16,9 +16,16 @@ const API = {
         const queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" +
             authKey + "&q=" + topic + "&begin_date=" + StartYear + "0101&end_date=" + EndYear + "1231";
         return axios.get(queryURL).then((NYTdata) =>{
-            // console.log(NYTdata)
-            return axios.post("/api/articles", {NYTdata})
-            // return NYTdata.data.response.docs;
+            const NYTresults = NYTdata.data.response.docs;
+            const formattedResultsArray = [];
+            for (let i = 0; i < NYTresults.length; i++){
+                let formattedArticle = {};
+                formattedArticle.article = NYTresults[i].lead_paragraph;
+                formattedArticle.url= NYTresults[i].web_url;
+                formattedArticle.date = NYTresults[i].pub_date;
+                formattedResultsArray.push(formattedArticle);
+            }
+            return axios.post("/api/articles", formattedResultsArray)
         });
     },
 
